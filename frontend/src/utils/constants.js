@@ -1,1 +1,1 @@
-export const CONTRACT_ADDRESS = "0x7D0345C529853187BdA2315A07feDf68a3B16Fc9"; // deployed address 
+export const CONTRACT_ADDRESS = "0x0689BCa76610d2A97DE383511CDA3270B78f0520"; // deployed address 
