@@ -26,19 +26,29 @@ const App = () => {
     };
 
     const listModel = async () => {
-        const { name, description, price } = formData;
-        if (!name || !description || !price) {
-            alert("All fields are required.");
-            return;
-        }
+    const { name, description, price } = formData;
+    if (!name || !description || !price) {
+        alert("All fields are required.");
+        return;
+    }
+    try {
         const accounts = await web3.eth.getAccounts();
         await contract.methods
             .listModel(name, description, web3.utils.toWei(price, "ether"))
             .send({ from: accounts[0] });
         alert("Model listed successfully!");
+
+        // Clear the form
         setFormData({ name: "", description: "", price: "" });
+
+        // Refresh the models list
         fetchModels();
-    };
+    } catch (error) {
+        console.error("Error listing model:", error);
+        alert("There was an error listing the model. Please try again.");
+    }
+};
+
 
     const purchaseModel = async () => {
         const accounts = await web3.eth.getAccounts();
@@ -52,6 +62,7 @@ const App = () => {
             .send({ from: accounts[0], value: model.price });
         alert("Model purchased successfully!");
         setModelIdToPurchase("");
+        fetchModels();
     };
 
     const rateModel = async () => {
@@ -64,6 +75,7 @@ const App = () => {
         await contract.methods.rateModel(modelId, parseInt(rating, 10)).send({ from: accounts[0] });
         alert("Model rated successfully!");
         setRateData({ modelId: "", rating: "" });
+        fetchModels();
     };
 
     const viewModelDetails = async (modelId) => {

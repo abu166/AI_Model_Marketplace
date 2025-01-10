@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { contract, web3 } from "../utils/web3";
 
-const ListModelForm = () => {
+const ListModelForm = ({ fetchModels }) => {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
@@ -14,10 +14,14 @@ const ListModelForm = () => {
             await contract.methods
                 .listModel(name, description, web3.utils.toWei(price, "ether"))
                 .send({ from: accounts[0] });
+
             alert("Model listed successfully!");
             setName("");
             setDescription("");
             setPrice("");
+
+            // Fetch the updated list of models
+            await fetchModels();
         } catch (err) {
             alert("Failed to list model: " + err.message);
         }
