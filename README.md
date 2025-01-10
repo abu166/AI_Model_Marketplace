@@ -28,16 +28,22 @@ A decentralized application for listing, purchasing, rating, and managing AI mod
 ## Demo Screenshots
 
 ### Main Page
-![Main Page](demo-screenshots/main-page.png)
+![Main Page](photos/main.png)
 
 ### Listing a Model
-![List Model](demo-screenshots/list-model.png)
+![List Model](photos/list.png)
 
 ### Available Models
-![Available Models](demo-screenshots/available-models.png)
+![Available Models](photos/available_models.png)
+
+### View Details
+![View Details](photos/details.png)
+
+### Confirm Purchase
+![Confirm Purchase](photos/purchase.png)
 
 ### Rating a Model
-![Rate Model](demo-screenshots/rate-model.png)
+![Rate Model](photos/rate.png)
 
 ---
 
