@@ -25,6 +25,17 @@ A decentralized application for listing, purchasing, rating, and managing AI mod
 
 ---
 
+
+## Technologies Used
+
+- **React**: Frontend framework for building the user interface.
+- **Solidity**: Smart contract development for blockchain interactions.
+- **Web3.js**: Library for interacting with the blockchain and smart contracts.
+- **Bootstrap**: UI framework for styling and layout.
+
+
+---
+
 ## Demo Screenshots
 
 ### Main Page
@@ -44,6 +55,32 @@ A decentralized application for listing, purchasing, rating, and managing AI mod
 
 ### Rating a Model
 ![Rate Model](photos/rate.png)
+
+---
+
+## How to Run the Project
+
+1. **Clone the repository**:
+```bash
+git clone https://github.com/your-repository/ai-model-marketplace.git
+cd ai-model-marketplace
+```
+2. **Install dependencies:**
+```bash
+npm install
+```
+
+3. **Start the development server:**
+```bash
+npm start
+```
+
+4. **Set up the blockchain environment:**
+   - Deploy the smart contracts using RemixIDE.
+   - Update the contractAddress and ABI in your project under src/utils/web3.js.
+
+5. **Run the DApp:**
+  - Open http://localhost:3000 in your browser.
 
 ---
 
@@ -69,3 +106,10 @@ A decentralized application for listing, purchasing, rating, and managing AI mod
 ### Withdrawing Funds
 1. As the model creator, click the **Withdraw Funds** button.
 2. Confirm the transaction.
+
+---
+
+## License
+
+This project is licensed under the terms of the [MIT License](LICENSE).
+
